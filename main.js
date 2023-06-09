@@ -1,35 +1,14 @@
-const urlApi = "https://miniback-movements.onrender.com/movements";
-const listMovements = [];
+import getMovements from "./services/getMovimientos.js";
 const containerMovements = document.querySelector('#tBodyMovements')
 
-const getMovements = async () => {
-    try {
-        const response = await axios.get(urlApi)
-        if (response.status === 200) {
-            response.data.forEach((movement) => {
-                const newMovement = {
-                    id: movement.id,
-                    description: movement.description,
-                    price: movement.price,
-                    type: movement.type,
-                }
-                listMovements.push(newMovement)
-                
-            //         if (response.data.length === index + 1) {
-            //             )
-            //         }
-            //     });
-            });
-            printMovements()
-        }
-    } catch (error) {
-        console.log(error)
-    }
-}
+document.addEventListener('DOMContentLoaded', async () => {
+    const movements = await getMovements()
+    printMovements(movements, containerMovements)
+})
 
-const printMovements = () => {
-    containerMovements.innerHTML = "";
-    listMovements.forEach(movement => {
+const printMovements = (movements,container) => {
+    container.innerHTML = "";
+    movements.forEach(movement => {
         containerMovements.innerHTML += `
         <tr>
             <td>${movement.id}</td>
@@ -40,4 +19,4 @@ const printMovements = () => {
         `
     })
 }
-getMovements()
+
