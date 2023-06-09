@@ -49,3 +49,8 @@ table .thead{
 #tBodyMovements tr td{
     padding: 1.3rem 0;
 }
+
+.material-symbols-outlined {
+    color: #4ECDC4;
+    cursor: pointer;
+}

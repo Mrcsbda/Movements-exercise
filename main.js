@@ -8,13 +8,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 const printMovements = (movements,container) => {
     container.innerHTML = "";
-    movements.forEach(movement => {
+    movements.forEach((movement, index) => {
         containerMovements.innerHTML += `
         <tr>
-            <td>${movement.id}</td>
+            <td>${index + 1}</td>
             <td>${movement.description}</td>
             <td>${movement.price}</td>
             <td>${movement.type}</td>
+            <td>
+            <span class="material-symbols-outlined delete">delete</span>
+            <span class="material-symbols-outlined edit">edit</span>
+            </td>
         </tr>
         `
     })
