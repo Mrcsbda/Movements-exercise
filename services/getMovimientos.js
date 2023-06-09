@@ -1,4 +1,4 @@
-const urlApi = "https://miniback-movements.onrender.com/movements";
+import { urlApi } from "./data.js";
 
 const getMovements = async () => {
     try {
