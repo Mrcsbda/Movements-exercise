@@ -5,22 +5,22 @@ const containerMovements = document.querySelector('#tBodyMovements')
 const getMovements = async () => {
     try {
         const response = await axios.get(urlApi)
-        console.log(response.data)
         if (response.status === 200) {
-            return new Promise((resolve, reject) => {
-                response.data.forEach((movement,index) => {
-                    const newMovement = {
-                        id: movement.id,
-                        description: movement.description,
-                        price: movement.price,
-                        type: movement.type,
-                    }
-                    listMovements.push(newMovement)
-                    if (response.data.length === index + 1) {
-                        resolve(printMovements())
-                    }
-                });
+            response.data.forEach((movement) => {
+                const newMovement = {
+                    id: movement.id,
+                    description: movement.description,
+                    price: movement.price,
+                    type: movement.type,
+                }
+                listMovements.push(newMovement)
+                
+            //         if (response.data.length === index + 1) {
+            //             )
+            //         }
+            //     });
             });
+            printMovements()
         }
     } catch (error) {
         console.log(error)
