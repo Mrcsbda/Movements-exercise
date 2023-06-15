@@ -2,12 +2,13 @@ import { urlApi } from "./data.js";
 
 const getMovements = async () => {
     try {
-        const response = await axios.get(urlApi)
-        if (response.status === 200) {
-            return response.data;
+        const {data, status} = await axios.get(urlApi)
+        if (status === 200) {
+            return data;
         }
     } catch (error) {
         console.log(error)
+        return []
     }
 }
 

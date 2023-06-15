@@ -1,0 +1,5 @@
+export const containerMovements = document.querySelector('#tBodyMovements')
+export const form = document.getElementById('form') 
+export const inputs = form.getElementsByTagName('input')
+export const select = form.getElementsByTagName('select')
+export const labels = form.getElementsByTagName('label')

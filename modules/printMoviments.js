@@ -8,8 +8,8 @@ const printMovements = (movements,container) => {
             <td>${movement.price}</td>
             <td>${movement.type}</td>
             <td>
-            <span class="material-symbols-outlined delete">delete</span>
-            <span class="material-symbols-outlined edit">edit</span>
+            <span class="material-symbols-outlined btn--delete" data-id="${movement.id}">delete</span>
+            <span class="material-symbols-outlined btn--edit" data-id="${movement.id}">edit</span>
             </td>
         </tr>
         `
